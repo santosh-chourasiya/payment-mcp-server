@@ -1,6 +1,6 @@
 # Paytm MCP Server
 
-A Python-based MCP (Merchant Control Panel) server for managing Paytm payment links and transactions.
+A Python-based MCP (Model Context Protocal) server for managing Paytm payment links and transactions.
 
 ## Features
 
@@ -39,11 +39,10 @@ chmod +x setup.sh
 
 The script will:
 
-1. Check for required dependencies (Python 3.12+, uv, Claude Desktop)
+1. Check for required dependencies (Python 3.12+, uv)
 2. Clone or update the repository
 3. Create and activate a virtual environment
 4. Install all required dependencies
-5. Create a `.env` file template for Paytm credentials
 
 ### Option 2: Manual Installation
 
@@ -66,18 +65,6 @@ The script will:
    uv pip install .
    ```
 
-## Configuration
-
-1. **Create a `.env` file in the project root:**
-
-   ```bash
-   # Paytm credentials
-   PAYTM_MID=your_paytm_mid
-   PAYTM_KEY_SECRET=your_paytm_key_secret
-   ```
-
-2. **Update the `.env` file with your actual Paytm credentials**
-
 ## Running the MCP Server with Claude Desktop
 
 The server is designed to be managed and run via Claude Desktop. You do not need to run the server manually from the command line.
@@ -93,8 +80,8 @@ Place this file in your project root or as required by Claude Desktop:
       "command": "uv path",
       "args": ["--directory", "path to project", "run", "paytm_mcp.py"],
       "env": {
-        "PAYTM_MID": "****************",
-        "PAYTM_KEY_SECRET": "************"
+        "PAYTM_MID": "<Your paytm mid>",
+        "PAYTM_KEY_SECRET": "<Your paymt key>"
       }
     }
   }
@@ -108,13 +95,6 @@ Place this file in your project root or as required by Claude Desktop:
 
 1. Update the `claude_desktop_config.json` with your Paytm credentials
 2. Restart the server using Claude Desktop
-
-## Project Structure
-
-- `paytm_mcp.py`: Main server entry point and tool definitions
-- `services/`: Business logic for payments
-- `config/`: Configuration and settings
-- `utils/`: Data models and utilities
 
 ## License
 
