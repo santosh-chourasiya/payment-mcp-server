@@ -2,24 +2,10 @@
 
 A Python-based MCP (Model Context Protocal) server for managing Paytm payment links and transactions.
 
-## Features
-
-- Create Paytm payment links for customers
-- Fetch all created payment links
-- Retrieve transactions for a specific payment link
-
 ## Prerequisites
 
 - Python 3.12 or higher
-- Paytm Merchant credentials:
-  - `PAYTM_MID`
-  - `PAYTM_KEY_SECRET`
-- The following Python dependencies:
-  - httpx>=0.28.1
-  - mcp[cli]>=1.7.0
-  - paytmchecksum
-  - pycryptodome
-  - requests
+- Paytm Merchant credentials: `PAYTM_MID` and `PAYTM_KEY_SECRET`
 - [uv](https://github.com/astral-sh/uv) (a fast Python package installer and runner)
 - [Claude Desktop](https://www.anthropic.com/claude) (for running and managing the server)
 
@@ -49,8 +35,8 @@ The script will:
 1. **Clone the repository:**
 
    ```bash
-   git clone git@bitbucket.org:paytmteam/payment-mcp.git
-   cd payment-mcp
+   git clone https://github.com/paytm/payment-mcp-server.git
+   cd payment-mcp-server
    ```
 
 2. **Create and activate a virtual environment:**
@@ -77,8 +63,8 @@ Place this file in your project root or as required by Claude Desktop:
 {
   "mcpServers": {
     "paytm-mcp-server": {
-      "command": "uv path",
-      "args": ["--directory", "path to project", "run", "paytm_mcp.py"],
+      "command": "<uv path>",
+      "args": ["--directory", "<path to project>", "run", "paytm_mcp.py"],
       "env": {
         "PAYTM_MID": "<Your paytm mid>",
         "PAYTM_KEY_SECRET": "<Your paymt key>"
@@ -99,13 +85,3 @@ Place this file in your project root or as required by Claude Desktop:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-The MIT License is a permissive license that allows you to:
-
-- Use the code commercially
-- Modify the code
-- Distribute the code
-- Use the code privately
-- Sublicense the code
-
-The only requirement is that the license and copyright notice must be included in all copies or substantial portions of the software.
