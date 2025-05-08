@@ -7,6 +7,8 @@ from mcp.server.fastmcp import FastMCP
 from services.payment_service import PaymentService
 from config.settings import settings
 from utils.models import PaymentLink, Transaction
+from config.settings import settings
+
 
 
 # Configure logging
@@ -22,8 +24,7 @@ mcp = FastMCP("paytm-mcp-server")
 
 # Initialize services
 try:
-    # email_service = EmailService()
-    payment_service = PaymentService(os.environ.get("PAYTM_KEY_SECRET"),os.environ.get("PAYTM_MID"))
+    payment_service = PaymentService(settings.PAYTM_KEY_SECRET,settings.PAYTM_MID)
 except Exception as e:
     logger.error(f"Failed to initialize services: {str(e)}")
     sys.exit(1)

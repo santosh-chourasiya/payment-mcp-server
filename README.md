@@ -22,8 +22,8 @@ Paytm MCP Server enables AI agents and developers to securely access Paytm's Pay
 
 ## Prerequisites
 
-- Python 3.12 or higher
-- Paytm Merchant credentials: `PAYTM_MID` and `PAYTM_KEY_SECRET`
+- [Python 3.12](https://www.python.org/downloads/) or higher
+- [Paytm Merchant credentials](https://www.paytmpayments.com//docs/getting-started): `PAYTM_MID` and `PAYTM_KEY_SECRET`
 - [uv](https://github.com/astral-sh/uv) (a fast Python package installer and runner)
 - [Claude Desktop](https://www.anthropic.com/claude) (for running and managing the server)
 

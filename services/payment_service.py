@@ -2,12 +2,13 @@ import requests
 import json
 from paytmchecksum import PaytmChecksum
 from typing import Optional
+from config.settings import settings
 
 class PaymentService:
     def __init__(self, merchant_key: str, mid: str):
         self.merchant_key = merchant_key
         self.mid = mid
-        self.base_url = "https://secure.paytmpayments.com"
+        self.base_url = settings.PAYTM_BASE_URL
 
     def create_payment_link(self, recipient_name: str, purpose: str, customer_email: str, 
                        customer_mobile: str, amount: float) -> str:
