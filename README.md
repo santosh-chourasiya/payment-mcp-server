@@ -91,8 +91,8 @@ Place this file in your project root or as required by Claude Desktop:
       "command": "uv path",
       "args": ["--directory", "path to project", "run", "paytm_mcp.py"],
       "env": {
-        "PAYTM_MID": "****************",
-        "PAYTM_KEY_SECRET": "************"
+        "PAYTM_MID": "*****************",
+        "PAYTM_KEY_SECRET": "*************"
       }
     }
   }
